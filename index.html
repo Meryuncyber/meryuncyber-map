@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MerYunCyber Map</title>
+
+  <!-- Font ve Stil Dosyaları -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="styles/mapbox-theme.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Harita Kütüphanesi -->
+  <script src="//unpkg.com/globe.gl"></script>
+</head>
+<body>
+  <!-- 🌍 Harita Konteyneri -->
+  <div id="globe-container"></div>
+
+  <!-- 🔝 Başlık ve Dil Seçici -->
+  <header>
+    <h1 class="app-title" data-translate="app_title">MerYunCyber Map</h1>
+    <nav class="language-switcher">
+      <button onclick="setLanguage('tr')" class="lang-btn active" id="btn-tr">TR</button>
+      <span class="lang-separator">|</span>
+      <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+    </nav>
+  </header>
+
+  <!-- 🎯 Filtre ve Bilgi Paneli -->
+  <section class="dashboard-ui">
+    <div id="filter-panel"></div> <!-- components/filter.html yeri -->
+    <aside class="info-panel">
+      <h2 data-translate="latest_attacks">Son Saldırılar</h2>
+      <ul id="attack-log"></ul>
+    </aside>
+  </section>
+
+  <!-- 🧠 Olay Kartları Alanı -->
+  <section id="card-container"></section> <!-- components/card.html yeri -->
+
+  <!-- 🔻 Alt Bilgi -->
+  <footer>
+    <p data-translate="footer_text">Tüm hakları saklıdır &copy; 2025 MerYunCyber</p>
+  </footer>
+
+  <!-- 🧩 Script Dosyaları -->
+  <script src="assets/js/dataLoader.js"></script>
+  <script src="assets/js/mapEngine.js"></script>
+  <script src="assets/js/uiEvents.js"></script>
+  <script src="assets/js/aiInsight.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
